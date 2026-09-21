@@ -124,7 +124,7 @@ button:focus-visible {
 .hero-scrim {
   position: absolute; inset: 0;
   background:
-    linear-gradient(0deg, rgba(13,17,32,.94) 0%, rgba(13,17,32,.55) 22%, rgba(13,17,32,0) 44%),
+    linear-gradient(0deg, rgba(13,17,32,.95) 0%, rgba(13,17,32,.82) 30%, rgba(13,17,32,0) 54%),
     linear-gradient(88deg, var(--night) 22%, rgba(13,17,32,.86) 46%, rgba(13,17,32,.5) 100%);
 }
 @media (max-width: 860px) {
