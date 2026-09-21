@@ -119,12 +119,18 @@ button:focus-visible {
   opacity: 0; transform: scale(1.05);
   animation: surface 1400ms cubic-bezier(.22, 1, .36, 1) 800ms forwards;
 }
+/* Two layers: one darkens the text column, the other darkens the bottom band
+   so the date row stays legible where the photo is brightest. */
 .hero-scrim {
   position: absolute; inset: 0;
-  background: linear-gradient(88deg, var(--night) 22%, rgba(13,17,32,.86) 46%, rgba(13,17,32,.5) 100%);
+  background:
+    linear-gradient(0deg, rgba(13,17,32,.94) 0%, rgba(13,17,32,.55) 22%, rgba(13,17,32,0) 44%),
+    linear-gradient(88deg, var(--night) 22%, rgba(13,17,32,.86) 46%, rgba(13,17,32,.5) 100%);
 }
 @media (max-width: 860px) {
-  .hero-scrim { background: linear-gradient(180deg, rgba(13,17,32,.62) 0%, rgba(13,17,32,.9) 52%, var(--night) 100%); }
+  .hero-scrim {
+    background: linear-gradient(180deg, rgba(13,17,32,.62) 0%, rgba(13,17,32,.9) 52%, var(--night) 100%);
+  }
 }
 
 /* The mashrabiya screen: a tiled Khatem star, kept clear of the headline
@@ -205,11 +211,12 @@ button:focus-visible {
 .band-photo { background: var(--night); overflow: hidden; }
 .band-bg { position: absolute; inset: 0; }
 .band-bg img { width: 100%; height: 100%; object-fit: cover; opacity: .42; }
+.band-photo .wrap { position: relative; }
 .band-photo::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(13,17,32,.6) 0%, rgba(13,17,32,.88) 60%, var(--night) 100%);
 }
-.band-photo .wrap { position: relative; z-index: 1; }
+.band-photo .wrap { z-index: 1; }
 
 .band h2 { font-size: clamp(30px, 4vw, 50px); max-width: 20ch; }
 .band-light h2 { color: var(--indigo); }
