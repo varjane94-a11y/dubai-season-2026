@@ -14,6 +14,7 @@ A single static page. No build step, no dependencies — open `index.html` and i
 | `index.html` | The whole page |
 | `styles.css` | Design tokens and layout |
 | `script.js` | The sticky nav and the audience tabs |
+| `img/` | Photography, at 1600px and 800px widths |
 
 ## Design
 
@@ -49,6 +50,8 @@ WhatsOn.ae.
 
 ## Photography
 
-Images are served from the [Unsplash](https://unsplash.com) CDN under the
+All images are from [Unsplash](https://unsplash.com) under the
 [Unsplash License](https://unsplash.com/license), which permits commercial use.
-Resolution is selected per breakpoint through the CDN's own width parameter.
+They are served from this repository rather than hotlinked, so the page has no
+external image dependency. Each is stored at two widths and picked per
+breakpoint with `<picture>`.
